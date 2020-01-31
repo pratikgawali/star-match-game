@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Game from "./Game";
 
-export default function App() {
-  const [count, setCount] = useState(0);
-  return (
-    <div>
-      This is a sample stateful and server-side
-      rendered React application.
-      <br />
-      <br />
-      Here is a button that will track
-      how many times you click it:
-      <br />
-      <br />
-      <button onClick={() => setCount(count + 1)}>{count}</button>
-    </div>
-  );
-}
+const App = () => {
+  const [gameId, setGameId] = useState(1);
+  return <Game key={gameId} startNewGame={() => setGameId(gameId + 1)} />;
+};
+
+export default App;
